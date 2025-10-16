@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Detectives Tech — 30 Acertijos (ed. fácil)</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <!-- Pistas suaves en código: DOM = estructura del documento; HTTPS usa 443. -->
+</head>
+<body>
+  <header class="topbar">
+    <h1>🔎 Detectives Tech — 30 Acertijos</h1>
+    <p class="sub">Hay 12 fáciles para arrancar con confianza. Elegí una tarjeta, respondé y sumá puntos.</p>
+
+    <div class="toolbar">
+      <div class="stat"><strong>Resueltos:</strong> <span id="solvedCount">0</span>/30</div>
+      <div class="stat"><strong>Puntos:</strong> <span id="score">0</span></div>
+
+      <label class="filter">
+        Dificultad:
+        <select id="difficultyFilter">
+          <option value="all">Todas</option>
+          <option value="facil">Fácil</option>
+          <option value="media">Media</option>
+          <option value="dificil">Difícil</option>
+        </select>
+      </label>
+
+      <input id="searchBox" type="search" placeholder="Buscar palabra clave..." />
+      <button id="resetBtn" class="btn outline">Reiniciar</button>
+      <button id="helpBtn" class="btn">Cómo jugar</button>
+    </div>
+
+    <div class="progress"><div id="progressBar" class="bar"></div></div>
+  </header>
+
+  <main class="container">
+    <section id="grid" class="grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <small>Podés usar ChatGPT para investigar (binario, Base64, puertos, CSS, Git, conceptos básicos).</small>
+  </footer>
+
+  <!-- Modal -->
+  <dialog id="riddleModal" class="modal">
+    <form method="dialog" class="modal-card" id="modalForm">
+      <header class="modal-header">
+        <h2 id="modalTitle">Acertijo</h2>
+        <button value="cancel" class="icon-btn" aria-label="Cerrar">✕</button>
+      </header>
+      <div class="modal-body">
+        <p id="modalPrompt"></p>
+
+        <details id="hintBlock" class="hint">
+          <summary>💡 Ver pista</summary>
+          <div id="modalHint"></div>
+          <div class="chatgpt-tip">Sugerencia para ChatGPT: <code id="chatgptPrompt"></code></div>
+        </details>
+
+        <label class="answer-label" for="answerInput">Tu respuesta:</label>
+        <input id="answerInput" type="text" placeholder="Escribí tu respuesta…" autocomplete="off"/>
+        <div id="answerFeedback" class="feedback"></div>
+      </div>
+      <footer class="modal-footer">
+        <button id="checkBtn" class="btn">Comprobar</button>
+        <button value="cancel" class="btn outline">Cerrar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
