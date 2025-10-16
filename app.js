@@ -19,7 +19,7 @@ const RIDDLES = [
   // 12 FÁCILES
   {id:"P01",dif:"facil",titulo:"2 al cubo",prompt:"¿Cuánto da 2^3?",respuesta:"8",hint:"Probá 2*2*2.",gpt:"Calcula 2^3."},
   {id:"P02",dif:"facil",titulo:"Binario 10",prompt:"¿Binario de 10?",respuesta:"1010",hint:"8+2.",gpt:"Convierte 10 a binario."},
-  {id:"P03",dif:"facil",titulo:"Length",prompt:"¿'hola'.length?",respuesta:"4",hint:"Cuenta letras.",gpt:"¿Qué devuelve length en un string?"},
+  {id:"P03",dif:"facil",titulo:"Nombre de red",prompt:"¿Cómo se llama la red Wi-Fi a la que te conectás normalmente? (en minúsculas)",respuesta:"wifi",hint:"También se la conoce como SSID.",gpt:"¿Qué es el SSID de una red Wi-Fi?"},
   {id:"P04",dif:"facil",titulo:"Base64 'hola'",prompt:"¿Base64 de 'hola'?",respuesta:"aG9sYQ==",hint:"btoa('hola') en consola.",gpt:"Codifica 'hola' a Base64."},
   {id:"P05",dif:"facil",titulo:"Color blanco",prompt:"Código HEX del blanco puro.",respuesta:"#ffffff",hint:"R=255,G=255,B=255.",gpt:"¿Hex de color blanco?"},
   {id:"P06",dif:"facil",titulo:"Morse SOS",prompt:"Morse de SOS (puntos y guiones).",respuesta:"...---...",hint:"S=..., O=---.",gpt:"Morse para SOS."},
@@ -249,3 +249,4 @@ function shoot(n=30){
     if(Date.now() < end && n-- > 0) requestAnimationFrame(frame);
   })();
 }
+
